@@ -1,0 +1,31 @@
+.header-container {
+    background-color: pink;
+    height: 50px;
+    overflow: hidden;
+    transition: height 0.5s;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+  }
+  
+  .show {
+    height: 50px;
+  }
+  
+  .hide {
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
