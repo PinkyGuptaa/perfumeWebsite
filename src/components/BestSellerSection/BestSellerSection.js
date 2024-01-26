@@ -1,93 +1,120 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+import img1 from '../../assets/category/1.jpg';
+import img2 from '../../assets/category/2.jpg';
+import img3 from '../../assets/category/3.jpg';
+import img4 from '../../assets/category/4.jpg';
 
-const BestSellerContainer = styled.div`
-  text-align: center;
-  margin: 20px 0;
-`;
-
-const CardContainer = styled.div`
+const PinkDiv = styled.div`
+  background-color: #FFF5EE;
+  width: 100%;
+  height: 600px;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-const ProductCard = styled.div`
-  width: 200px;
-  padding: 20px;
+const PinkCarouselContainer = styled.div`
+
+`;
+
+const CarouselCard = styled.div`
+  width: 150px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   text-align: center;
-  cursor: pointer;
   margin: 10px;
 `;
 
-const ProductImage = styled.img`
+const CarouselImage = styled.img`
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
 `;
 
-const ProductDescription = styled.div`
-  margin-top: 10px;
+const ProductName = styled.div`
+  font-weight: bold;
+  margin-bottom: 5px;
 `;
 
-const BestSellerSection = () => {
-  const bestSellerProducts = [
-    {
-      name: 'Product 1',
-      description: 'Description of Product 1. This is a detailed description providing more information about the product.',
-      rating: 4.5,
-      amount: '$50.00',
-      image: 'path/to/product1.jpg',
-    },
-    {
-      name: 'Product 2',
-      description: 'Description of Product 2. This is a detailed description providing more information about the product.',
-      rating: 4.2,
-      amount: '$45.00',
-      image: 'path/to/product2.jpg',
-    },
-    {
-      name: 'Product 3',
-      description: 'Description of Product 3. This is a detailed description providing more information about the product.',
-      rating: 4.8,
-      amount: '$60.00',
-      image: 'path/to/product3.jpg',
-    },
-    {
-      name: 'Product 4',
-      description: 'Description of Product 4. This is a detailed description providing more information about the product.',
-      rating: 4.0,
-      amount: '$55.00',
-      image: 'path/to/product4.jpg',
-    },
-  ];
+const ProductDetails = styled.div`
+  margin-bottom: 5px;
+`;
 
-  const handleCardClick = (product) => {
-    // Add logic for handling card click (e.g., navigate to product details)
-    console.log(`Clicked on ${product.name}`);
-  };
+const Rating = styled.div`
+  color: #FFD700; /* Gold color for rating */
+  margin-bottom: 5px;
+`;
 
+const AddToCartButton = styled.button`
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+const carouselItems = [
+  {
+    name: 'Item 1',
+    details: 'Details of Product 1. This is a detailed description providing more information about the product.',
+    rating: 4.5,
+    image: img1,
+  },
+  {
+    name: 'Item 2',
+    details: 'Details of Product 2. This is a detailed description providing more information about the product.',
+    rating: 4.2,
+    image: img2,
+  },
+  {
+    name: 'Item 3',
+    details: 'Details of Product 3. This is a detailed description providing more information about the product.',
+    rating: 4.8,
+    image: img3,
+  },
+  {
+    name: 'Item 4',
+    details: 'Details of Product 4. This is a detailed description providing more information about the product.',
+    rating: 4.0,
+    image: img4,
+  },
+  // Add other items...
+];
+
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+};
+
+const SimplePinkDiv = () => {
   return (
-    <BestSellerContainer>
-      <h2>Shop Best Sellers</h2>
-      <CardContainer>
-        {bestSellerProducts.map((product) => (
-          <ProductCard key={product.name} onClick={() => handleCardClick(product)}>
-            <ProductImage src={product.image} alt={product.name} />
-            <ProductDescription>
-              <div>{product.name}</div>
-              <div>{product.description}</div>
-              <div>Rating: {product.rating}</div>
-              <div>Amount: {product.amount}</div>
-            </ProductDescription>
-          </ProductCard>
-        ))}
-      </CardContainer>
-    </BestSellerContainer>
+    <PinkDiv>
+      <PinkCarouselContainer>
+        <h2>Shop BestSellers</h2>
+        <Slider {...settings}>
+          {carouselItems.map((item, index) => (
+            <CarouselCard key={index}>
+              <CarouselImage src={item.image} alt={item.name} />
+              <ProductName>{item.name}</ProductName>
+              <ProductDetails>{item.details}</ProductDetails>
+              <Rating>Rating: {item.rating}</Rating>
+              <AddToCartButton>Add to Cart</AddToCartButton>
+            </CarouselCard>
+          ))}
+        </Slider>
+      </PinkCarouselContainer>
+    </PinkDiv>
   );
 };
 
-export default BestSellerSection;
+export default SimplePinkDiv;

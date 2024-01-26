@@ -4,7 +4,8 @@ import Header from './components/Header/Header';
 import BannerSlider from './components/BannerSlider/BannerSlider';
 import CategoryCards from './components/CategoryCards/categoryCards';
 import BestSellerSection from './components/BestSellerSection/BestSellerSection';
-
+import LimitedEdition from './components/LimitedEdition/LimitedEdition'
+import Service from './components/Service/Service'
 function App() {
   const [isHeaderVisible, setHeaderVisibility] = useState(true);
 
@@ -23,6 +24,8 @@ function App() {
       <BannerSlider/>
       <CategoryCards/>
       <BestSellerSection/>
+      <LimitedEdition/>
+      <Service />
     </div>
   );
 }
