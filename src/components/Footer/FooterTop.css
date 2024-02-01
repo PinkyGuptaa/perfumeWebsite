@@ -1,0 +1,28 @@
+/* FooterTop.css */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333; /* Set your desired background color */
+    color: #fff; /* Set your desired text color */
+    padding: 20px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .footer-item {
+    text-align: center;
+    margin: 10px;
+    flex: 1 0 200px; 
+    
+  }
+/*   
+  .footer-item span {
+    margin-bottom: 10px;
+  } */
+
+  /* .footer-item img {
+    width: 100%;
+    height: auto;
+  }
+  */
