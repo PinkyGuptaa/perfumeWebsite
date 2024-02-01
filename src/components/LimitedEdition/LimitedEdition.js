@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import Product from "./Product";
 import { productData, responsive } from "./data";
 
-export default function LimitedEdition() {
+const LimitedEdition=()=> {
   const product = productData.map((item) => (
     <Product
       name={item.name}
@@ -23,3 +23,4 @@ export default function LimitedEdition() {
     </div>
   );
 }
+export default LimitedEdition;

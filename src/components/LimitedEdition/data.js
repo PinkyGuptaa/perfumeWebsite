@@ -72,7 +72,7 @@ export const responsive = {
       imageurl:img3,
       name: "Luxury Kit",
       price: "₹7,200 (MRP, Inclusive of Taxes)",
-      description: "Some text about the product..",
+      // description: "Some text about the product..",
     },
     {
       id: 8,
